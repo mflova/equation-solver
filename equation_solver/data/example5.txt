@@ -1,0 +1,6 @@
+zero = five four
+two = five
+three = two
+one = three four
+five = 5
+four = 4

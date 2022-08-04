@@ -1,0 +1,13 @@
+offset = 4 + random + 1
+location = 1 + origin + offset
+origin = 3   +  5
+random = 2
+kayleigh = 1 + 2 + 3 + 4
+tj = origin + 20
+will = 12342 + 342
+vars = random
+b = a
+a = 5
+tough = offset + location + origin + random
+zed = tough + location
+sole = 5

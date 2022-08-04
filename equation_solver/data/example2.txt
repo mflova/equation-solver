@@ -1,0 +1,6 @@
+z = 1 +  w + 2
+y   = 37
+k  = offset + z
+offset =  10
+x = y
+w =   x +  46
