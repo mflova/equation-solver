@@ -44,32 +44,43 @@ into two main steps:
   In terms of velocity, this step only needs to traverse the array with all the
   equations once, meaning that it follows a `O(n)` time complexity.
 
-## How to use
+## Using
+
+### As a script
 
 A default example can be used with:
 
 ```bash
-python3 main.py
+python3 equation_solver/scripts/main.py
 ```
 
 But more examples can be tested with:
 
 ```bash
-python3 main.py --file <path_to_file.txt>
+python3 equation_solver/scripts/main.py --file <path_to_file.txt>
+```
+
+### As pip package
+
+In order to use this application as a pip package, it only needs to be installed with:
+
+```bash
+pip install .
+```
+
+And then it can be used as:
+
+```bash
+equation_solver # It will use default dataset
+equation_solver --file <path_to_file.txt>
 ```
 
 ## Testing
 
-Given the type of this vacancy, a few quick unit tests (14) were writen to cover 100%
-of the written tools. It is only needed `pytest`. You only need to execute this line in
-the root directory of the exercise:
+A few quick unit tests were writen to cover 100% of the written tools. It is only
+needed `pytest`. You only need to execute this line in the root directory of the exercise:
 
 ```bash
-pip install pytest
+pip install pytest  # If it was not installed
 pytest .
 ```
-
-Note: Instead of creating a `setup.py` and to ease the review of the exercise, I
-manually added the root directory from `test_equation_tools` to the `sys.path` so that
-I can import the tools I created. I am aware this is not a good practice at all. I
-usually create a `setup.py` for this.
