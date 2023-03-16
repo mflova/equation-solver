@@ -1,9 +1,9 @@
 """Solve a basic set of equations by using a txt file as input."""
 import argparse
 import os
+from typing import Final
 
 from equation_solver.tools.structures import SetEquations
-
 
 REL_DEFAULT_DATASET_PATH = "../datasets/example1.txt"
 """Relative path to the default dataset."""
@@ -11,8 +11,7 @@ REL_DEFAULT_DATASET_PATH = "../datasets/example1.txt"
 
 def _create_argument_parser() -> argparse.ArgumentParser:
     """Create the parser, defining the different arguments."""
-
-    ABS_DATASET_PATH = os.path.join(
+    abs_dataset_path: Final = os.path.join(
         os.path.join(os.path.dirname(__file__), (REL_DEFAULT_DATASET_PATH))
     )
 
@@ -22,7 +21,7 @@ def _create_argument_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--file_path",
         help="txt file containing the set of equations.",
-        default=ABS_DATASET_PATH,
+        default=abs_dataset_path,
     )
     return parser
 

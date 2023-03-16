@@ -78,7 +78,7 @@ class TestSetEquations:
     EXAMPLE_FILE: Final = os.path.join(TEST_DATA_DIR, "example1.txt")
     """Path to an example file for testing purposes."""
 
-    def test_from_txt(self):
+    def test_from_txt(self) -> None:
         """
         Verify that the class can be instantiated from an generic txt file.
 
@@ -139,7 +139,7 @@ class TestSetEquations:
         self, equations_dct: Mapping[str, Equation], expected_solutions: Mapping[str, int]
     ) -> None:
         """
-        Verify that the solutions are the correct ones given a few exmaples.
+        Verify that the solutions are the correct ones given a few examples.
 
         :param equations_dct: Dictionary used to instantiate `SetEquation`
         :param expected_solutions: Dictionary containing the expected solutions of the
