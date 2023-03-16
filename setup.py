@@ -1,3 +1,4 @@
+"""Install the whole package."""
 from setuptools import setup, find_packages
 
 setup(name="equation_solver",
@@ -7,9 +8,10 @@ setup(name="equation_solver",
       url="www.github.com/mflova",
       packages=find_packages(),
       package_data={"": ["datasets/*.txt"]},
+      extras_require={"dev": ["pytest"]},
       entry_points={
           "console_scripts": [
               "equation_solver = equation_solver.scripts.main:main",
           ],
-      }
+      },
      )

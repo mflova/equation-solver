@@ -1,7 +1,13 @@
-[mypy]
-strict = True
-warn-unreachable = True
+[tool.mypy]
+strict = true
+warn-unreachable = true
 
-[flake8]
+[tool.flake8]
 max-line-length = 90
 indent-size = 4
+
+[tool.pylint]
+disable="line-too-long"  # Already checked by flake8
+
+[tool.codespell]
+skip = ".git, .github"

@@ -75,6 +75,7 @@ class Equation:
                 sum_unknowns += value
         return self.sum_constants + sum_unknowns
 
+
 @dataclass
 class SetEquations:
     """Hold and perform multiple operations related to a set of equations."""
@@ -93,7 +94,7 @@ class SetEquations:
         :param path: Path to the txt file.
         :return: Object of type `SetEquations`.
         """
-        with open(path) as f:
+        with open(path, encoding="UTF-8") as f:
             content = f.read()
         equation_strs = content.split("\n")
         dct_equations = {}
@@ -110,10 +111,12 @@ class SetEquations:
         This method previously calculates the complexity of each equation by taking
         into account the dependencies among different symbols. Then, all of them are
         solved in increasing order of complexity, which will guarantee that all symbols
-        are avaialble when solving a new equation.
+        are available when solving a new equation.
 
         :param display_results: `True` to print the results, `False` otherwise.
             Defaults to False
+        :return: A dictionary based object that relates each symbol with its
+            corresponding found out value.
         """
         solutions: Dict[str, int] = {}
         self._compute_all_symbols_cost()
@@ -127,14 +130,15 @@ class SetEquations:
             self._print_solutions(solutions)
         return solutions
 
-    def _print_solutions(self, solutions: Mapping[str, int]) -> None:
+    @staticmethod
+    def _print_solutions(solutions: Mapping[str, int]) -> None:
         """
         Print the solutions with the specified format.
 
         :param solutions: Dictionary mapping the symbol and its value found.
         """
         # Order the dictionary by its key
-        sorted_solutions = {key: value for key, value in sorted(solutions.items())}
+        sorted_solutions = dict(sorted(solutions.items()))
         for symbol, value in sorted_solutions.items():
             print(f"{symbol} = {value}")
 
@@ -149,7 +153,9 @@ class SetEquations:
             self._compute_symbol_cost(symbol)
 
         # Order the dictionary by its value once all of the are computed
-        self._symbol_cost = {k: v for k,v in sorted(self._symbol_cost.items(), key=lambda item: item[1])}
+        self._symbol_cost = dict(
+            sorted(self._symbol_cost.items(), key=lambda item: item[1])
+        )
 
     def _compute_symbol_cost(self, symbol: str) -> int:
         """

@@ -1,4 +1,4 @@
-# Equation solver by Manuel Floriano
+# Equation solver
 
 This readme file explains some insights about how the algorithm works and how to use it.
 Tested in `Ubuntu` operating system with Python 3.8.10. All built-in tools.
@@ -48,20 +48,6 @@ into two main steps:
 
 ### As a script
 
-A default example can be used with:
-
-```bash
-python3 equation_solver/scripts/main.py
-```
-
-But more examples can be tested with:
-
-```bash
-python3 equation_solver/scripts/main.py --file <path_to_file.txt>
-```
-
-### As pip package
-
 In order to use this application as a pip package, it only needs to be installed with:
 
 ```bash
@@ -77,10 +63,23 @@ equation_solver --file <path_to_file.txt>
 
 ## Testing
 
-A few quick unit tests were writen to cover 100% of the written tools. It is only
-needed `pytest`. You only need to execute this line in the root directory of the exercise:
+A few quick unit tests were written to cover 100% of the written tools. Install the
+package as developper and run pytest:
 
 ```bash
-pip install pytest  # If it was not installed
+pip insatll .[dev]
 pytest .
 ```
+
+## Pipeline
+
+In order to maintain good quality code, following tools are used in the pipeline:
+
+- [Flake8](https://flake8.pycqa.org/en/latest/): Linting tool.
+- [Pylint](https://github.com/PyCQA/pylint): Linting tool similar to Flake8.
+- [Codespell](https://github.com/codespell-project/codespell): Linting tool to verify
+  there are not any misspell.
+- [Mypy](https://www.mypy-lang.org/): Static analysis tool that enforces correct type
+  hints.
+- [Pytest](https://docs.pytest.org/en/7.2.x/): Tool used to run and verify multiple
+  unit test.

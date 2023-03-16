@@ -139,7 +139,7 @@ class TestSetEquations:
         self, equations_dct: Mapping[str, Equation], expected_solutions: Mapping[str, int]
     ) -> None:
         """
-        Verify that the solutions are the correct ones given a few exmaples.
+        Verify that the solutions are the correct ones given a few examples.
 
         :param equations_dct: Dictionary used to instantiate `SetEquation`
         :param expected_solutions: Dictionary containing the expected solutions of the
