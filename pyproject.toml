@@ -1,0 +1,7 @@
+[mypy]
+strict = True
+warn-unreachable = True
+
+[flake8]
+max-line-length = 90
+indent-size = 4
