@@ -78,7 +78,7 @@ class TestSetEquations:
     EXAMPLE_FILE: Final = os.path.join(TEST_DATA_DIR, "example1.txt")
     """Path to an example file for testing purposes."""
 
-    def test_from_txt(self):
+    def test_from_txt(self) -> None:
         """
         Verify that the class can be instantiated from an generic txt file.
 

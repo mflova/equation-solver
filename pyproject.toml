@@ -1,13 +1,15 @@
 [tool.mypy]
 strict = true
-warn-unreachable = true
+exclude = "build"
 
 [tool.flake8]
 max-line-length = 90
 indent-size = 4
+exclude = "build"
 
 [tool.pylint]
-disable="line-too-long"  # Already checked by flake8
+disable= " line-too-long"  # Already checked by flake8
+ignore= " build"
 
 [tool.codespell]
-skip = ".git, .github"
+skip = ".git, .github, build"

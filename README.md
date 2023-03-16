@@ -64,7 +64,7 @@ equation_solver --file <path_to_file.txt>
 ## Testing
 
 A few quick unit tests were written to cover 100% of the written tools. Install the
-package as developper and run pytest:
+package as developer and run pytest:
 
 ```bash
 pip insatll .[dev]
